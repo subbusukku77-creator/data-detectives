@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0f0c0a;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom corkboard and detective paper textures */
+.corkboard-pattern {
+  background-color: #ba8446;
+  background-image: 
+    radial-gradient(#96642e 15%, transparent 16%),
+    radial-gradient(#805122 15%, transparent 16%),
+    linear-gradient(45deg, rgba(0,0,0,0.04) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.04) 75%),
+    radial-gradient(ellipse at 50% 10%, rgba(255, 230, 160, 0.22) 0%, transparent 70%);
+  background-size: 24px 24px, 18px 18px, 40px 40px, 100% 100%;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.65), inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+.wood-frame {
+  border: 18px solid #3d2314;
+  border-image: linear-gradient(to bottom right, #54331d, #2a160c, #482c19, #1c0e07) 18;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.7);
+}
+
+.aged-paper {
+  background-color: #f6eedb;
+  background-image: radial-gradient(rgba(180, 150, 110, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: #1f1b18;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.manilla-folder {
+  background-color: #eeddb7;
+  border: 1px solid #c9b486;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+}
+
+.stamp-confidential {
+  border: 3px dashed #b91c1c;
+  color: #b91c1c;
+  font-family: 'Special Elite', monospace;
+  letter-spacing: 0.18em;
+  transform: rotate(-8deg);
+  opacity: 0.88;
+  text-shadow: 1px 1px 0 rgba(185, 28, 28, 0.2);
+}
+
+.stamp-solved {
+  border: 4px solid #15803d;
+  color: #15803d;
+  font-family: 'Special Elite', monospace;
+  letter-spacing: 0.2em;
+  transform: rotate(-12deg);
+  opacity: 0.92;
+}
+
+.pin-shadow {
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,0.5));
+}
+
+.red-string-glow {
+  filter: drop-shadow(0 1px 3px rgba(220, 38, 38, 0.7));
+}
+
+/* Custom scrollbar for dossiers and tables */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1511;
+}
+::-webkit-scrollbar-thumb {
+  background: #523b28;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #78573b;
+}
+
+/* Subtle desk lamp ambient breathing animation */
+@keyframes lampPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+.ambient-lamp {
+  animation: lampPulse 8s ease-in-out infinite;
+}
